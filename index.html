@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='nameBadge'>
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Name Badge</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css">
+	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js'></script>
+</head>
+<body ng-controller='MainController'>
+	
+	<div class="container">
+			
+			<div class="row">
+			
+			<div class="col-sm-6 info">
+			<form id="border">
+				<div class="row">
+				
+					<div class="form-group col-sm-6">
+						<input type="name" class="form-control" id="firstName" placeholder='First Name' ng-model='newField.fname'>
+					</div>
+					<div class="form-group col-sm-6 ">
+						<input type="name" class="form-control" id='lastName' placeholder='Last Name' ng-model='newField.lname'>
+					</div>
+				
+				</div>
+				<div class="row">
+					
+					<div class="form-group col-sm-6">
+						<input type="email" class='form-control' id='emailInput' placeholder='Email Address' ng-model='newField.email'>
+					</div>
+
+					<div class="form-group col-sm-6">
+						<input type="text" class='form-control' id='placeOfBirth' placeholder='Place of Birth' ng-model='newField.birth'>
+					</div>
+
+				</div>
+				<div class="row">
+					
+					<div class="form-group col-sm-6">
+						<input type="tel" class='form-control' id='phoneInput' placeholder='Phone Number' ng-model='newField.phone'>
+					</div>
+
+					<div class="form-group col-sm-6">
+						<input type="text" class='form-control' id='favoriteFood' placeholder='Favorite Food' ng-model='newField.food'>
+					</div>
+
+				</div>
+				<div class="row">
+					
+					<div class="form-group col-sm-12">
+						<textarea class="form-control" rows='10' id='extraInfo' ng-model='newField.text' >Tell us about yourself </textarea>
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-2 col-sm-offset-5">
+						<button type="button" ng-click='addField(newField)' class='btn btn-primary'>Submit</button>
+					</div>
+				</div>
+			</form>
+		  </div>
+		 			<div class="col-sm-6" ng-repeat="field in allFields" >
+			
+							<div class="row" id="badge">
+								<div class="col-sm-12">
+									<h1 class="title">HELLO</h1>
+									<p class="lowTitle">my name is</p>
+								</div>
+							</div>
+						
+						<div id="badgeBorder">
+
+							<div class="row">
+
+								<div class="col-sm-6" >
+									<p>Name: {{field.fname}} {{field.lname}}</p>
+								</div>
+								<div class="col-sm-6" >
+									<p>Phone: {{field.phone}}</p>
+								</div>
+
+							</div>
+
+							<div class="row">
+								
+								<div class="col-sm-6" >
+									<p>Place of Birth: {{field.birth}}</p>
+								</div>
+								<div class="col-sm-6" >
+									<p>Favorite Food: {{field.food}}</p>
+								</div>
+
+							</div>
+
+							<div class="row">
+								
+								<div class="col-sm-6" >
+									<p>Email: {{field.email}}</p>
+								</div>
+								
+							</div>
+
+							<div class="row">
+								
+								<div class="col-sm-12" >
+									<p id="textBox">{{field.text}}</p>
+								</div>
+
+							</div>
+
+							
+
+
+						</div>
+						<div class="row">
+								<div class="col-sm-12 " id="footer"></div>
+						</div>
+
+					</div>
+
+
+
+
+		 </div>
+			
+		
+
+		
+
+</div>
+	<script src='app.js'></script>
+</body>
+</html>
